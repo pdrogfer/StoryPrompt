@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-m9-2RO">
-                                <rect key="frame" x="19" y="259" width="354" height="381.33333333333326"/>
+                                <rect key="frame" x="19" y="259" width="354" height="434.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-4U-pfx">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
@@ -78,6 +79,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="5" maxValue="10" minimumValueImage="5.circle" catalog="system" maximumValueImage="10.circle" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-Ov-HbV">
                                         <rect key="frame" x="-2" y="210.33333333333331" width="358" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="changeNumber:" destination="BYZ-38-t0r" eventType="valueChanged" id="frO-vm-hXP"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-S9-dZ9">
                                         <rect key="frame" x="0.0" y="262.33333333333337" width="354" height="20.333333333333314"/>
@@ -91,11 +95,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qnJ-ir-MKt">
+                                        <rect key="frame" x="0.0" y="347" width="354" height="32"/>
+                                        <segments>
+                                            <segment title="Sci Fi"/>
+                                            <segment title="Horror"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeStoryType:" destination="BYZ-38-t0r" eventType="valueChanged" id="hTe-aL-YJw"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kha-23-AMN">
-                                        <rect key="frame" x="0.0" y="347" width="354" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="400" width="354" height="34.333333333333314"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Generate Story Prompt"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Generate Story Prompt" cornerStyle="medium"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -110,6 +125,12 @@
                             <constraint firstItem="Jum-m9-2RO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="lFf-Le-BIU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adjectiveTextField" destination="9GB-GZ-38p" id="Mu0-g4-8Ko"/>
+                        <outlet property="numberLabel" destination="Uh3-ez-Lgc" id="LDI-4N-tDL"/>
+                        <outlet property="numberSliderField" destination="fdK-Ov-HbV" id="1bF-EI-p7P"/>
+                        <outlet property="verbTextField" destination="o56-mA-FdW" id="z8u-BF-IhS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,5 +140,8 @@
     <resources>
         <image name="10.circle" catalog="system" width="128" height="123"/>
         <image name="5.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
