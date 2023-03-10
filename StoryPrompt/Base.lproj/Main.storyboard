@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-m9-2RO">
-                                <rect key="frame" x="19" y="259" width="354" height="434.33333333333326"/>
+                                <rect key="frame" x="19" y="119" width="354" height="656.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-4U-pfx">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
@@ -93,19 +92,26 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-S9-dZ9">
-                                        <rect key="frame" x="0.0" y="262.33333333333337" width="354" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="262.33333333333331" width="354" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="object-object_box-of-books" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-jA-vzW">
+                                        <rect key="frame" x="0.0" y="304.66666666666669" width="354" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="D7e-0i-68o"/>
+                                            <constraint firstAttribute="width" secondItem="Ub3-jA-vzW" secondAttribute="height" multiplier="177:100" id="wRa-NB-3ft"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-e2-xzQ">
-                                        <rect key="frame" x="0.0" y="304.66666666666663" width="354" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="526.66666666666663" width="354" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qnJ-ir-MKt">
-                                        <rect key="frame" x="0.0" y="347" width="354" height="32"/>
+                                        <rect key="frame" x="0.0" y="569" width="354" height="32"/>
                                         <segments>
                                             <segment title="Sci Fi"/>
                                             <segment title="Horror"/>
@@ -115,11 +121,14 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kha-23-AMN">
-                                        <rect key="frame" x="0.0" y="400" width="354" height="34.333333333333314"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <rect key="frame" x="0.0" y="622" width="354" height="34.333333333333371"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Generate Story Prompt" cornerStyle="medium"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Generate Story Prompt" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="generateStoryPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZj-tL-Qrz"/>
                                         </connections>
@@ -134,7 +143,7 @@
                         <color key="backgroundColor" red="0.0" green="0.89411764705882346" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jum-m9-2RO" secondAttribute="trailing" constant="20" id="TMl-zR-wZc"/>
-                            <constraint firstItem="Jum-m9-2RO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="lFf-Le-BIU"/>
+                            <constraint firstItem="Jum-m9-2RO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="lFf-Le-BIU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -153,8 +162,9 @@
     <resources>
         <image name="10.circle" catalog="system" width="128" height="123"/>
         <image name="5.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="object-object_box-of-books" width="1000" height="1000"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
