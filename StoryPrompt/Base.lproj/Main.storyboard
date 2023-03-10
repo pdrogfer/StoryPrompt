@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-m9-2RO">
-                                <rect key="frame" x="19" y="119" width="354" height="656.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-m9-2RO">
+                                <rect key="frame" x="19" y="97" width="354" height="656.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-4U-pfx">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
@@ -151,6 +151,7 @@
                         <outlet property="noun" destination="UPc-AB-tCU" id="fEX-RO-VaP"/>
                         <outlet property="numberLabel" destination="Uh3-ez-Lgc" id="LDI-4N-tDL"/>
                         <outlet property="numberSliderField" destination="fdK-Ov-HbV" id="1bF-EI-p7P"/>
+                        <outlet property="storyPromptImageView" destination="Ub3-jA-vzW" id="UdQ-HS-fSM"/>
                         <outlet property="verbTextField" destination="o56-mA-FdW" id="z8u-BF-IhS"/>
                     </connections>
                 </viewController>

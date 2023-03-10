@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class ViewController: UIViewController {
     
@@ -14,8 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var verbTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var numberSliderField: UISlider!
+    @IBOutlet weak var storyPromptImageView: UIImageView!
     
     let storyPrompt = StoryPromptEntry()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,20 @@ class ViewController: UIViewController {
         storyPrompt.adjective = "adjective"
         storyPrompt.verb = "verb"
         storyPrompt.number = Int(numberSliderField.value)
+        storyPromptImageView.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage))
+        storyPromptImageView.addGestureRecognizer(gestureRecognizer)
+        
         print(storyPrompt)
+    }
+    
+    @objc func changeImage() {
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .images
+        configuration.selectionLimit = 1
+        let controller = PHPickerViewController(configuration: configuration)
+        controller.delegate = self
+        present(controller, animated: true)
     }
     
     @IBAction func changeNumber(_ sender: UISlider) {
@@ -63,5 +79,28 @@ extension ViewController: UITextFieldDelegate {
         updateStoryPrompt()
         return true
     }
+}
+
+extension ViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        if !results.isEmpty {
+            let result = results.first!
+            let itemProvider = result.itemProvider
+            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+                itemProvider.loadObject(ofClass: UIImage.self) {
+                    [weak self] image, error in
+                    guard let image = image as? UIImage else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self?.storyPromptImageView.image = image
+                        self?.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
 
