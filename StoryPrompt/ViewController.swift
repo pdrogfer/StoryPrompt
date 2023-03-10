@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var nounTextField: UITextField!
+    @IBOutlet weak var noun: UITextField!
     @IBOutlet weak var adjectiveTextField: UITextField!
     @IBOutlet weak var verbTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
@@ -43,6 +43,25 @@ class ViewController: UIViewController {
         } else {
             storyPrompt.genre = .scifi
         }
+    }
+    
+    @IBAction func generateStoryPrompt(_ sender: Any) {
+        updateStoryPrompt()
+        print(storyPrompt)
+    }
+    
+    func updateStoryPrompt() {
+        storyPrompt.noun = noun.text ?? ""
+        storyPrompt.adjective = adjectiveTextField.text ?? ""
+        storyPrompt.verb = verbTextField.text ?? ""
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        updateStoryPrompt()
+        return true
     }
 }
 
