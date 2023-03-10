@@ -63,13 +63,27 @@ class ViewController: UIViewController {
     
     @IBAction func generateStoryPrompt(_ sender: Any) {
         updateStoryPrompt()
-        print(storyPrompt)
+        
+        if storyPrompt.isValid() {
+            print(storyPrompt)
+        } else {
+            showInvalidStoryPromptAlert()
+        }
     }
     
     func updateStoryPrompt() {
         storyPrompt.noun = noun.text ?? ""
         storyPrompt.adjective = adjectiveTextField.text ?? ""
         storyPrompt.verb = verbTextField.text ?? ""
+    }
+    
+    func showInvalidStoryPromptAlert() {
+        let alert = UIAlertController(title: "Invalid Story Prompt", message: "Please fill out all of the fields", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { action in
+            
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }
 
