@@ -40,14 +40,20 @@
                             <outlet property="delegate" destination="QGh-wm-Vog" id="c5n-BD-WqN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8Dk-c5-bYu"/>
+                    <navigationItem key="navigationItem" id="8Dk-c5-bYu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pV7-em-762">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="aXX-fm-AKd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="R6e-tD-kP9" kind="show" identifier="ShowStoryPrompt" id="FPw-Ev-TM6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsI-ZA-RVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="661"/>
+            <point key="canvasLocation" x="-924" y="680"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S9Z-wk-5O1">
