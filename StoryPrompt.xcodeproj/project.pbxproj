@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB211F9529BF0D1F005F10C9 /* StoryPromptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB211F9429BF0D1F005F10C9 /* StoryPromptTableViewController.swift */; };
 		EB2978F229B8CF3100727C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2978F129B8CF3100727C8F /* AppDelegate.swift */; };
 		EB2978F429B8CF3100727C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2978F329B8CF3100727C8F /* SceneDelegate.swift */; };
 		EB2978F629B8CF3100727C8F /* AddStoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2978F529B8CF3100727C8F /* AddStoryPromptViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB211F9429BF0D1F005F10C9 /* StoryPromptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPromptTableViewController.swift; sourceTree = "<group>"; };
 		EB2978EE29B8CF3100727C8F /* StoryPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2978F129B8CF3100727C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2978F329B8CF3100727C8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				EB2978F529B8CF3100727C8F /* AddStoryPromptViewController.swift */,
 				EB29790A29BB799900727C8F /* StoryPromptViewController.swift */,
+				EB211F9429BF0D1F005F10C9 /* StoryPromptTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB211F9529BF0D1F005F10C9 /* StoryPromptTableViewController.swift in Sources */,
 				EB29790B29BB799900727C8F /* StoryPromptViewController.swift in Sources */,
 				EB29790929B8D0DF00727C8F /* StoryPrompts.swift in Sources */,
 				EB2978F629B8CF3100727C8F /* AddStoryPromptViewController.swift in Sources */,

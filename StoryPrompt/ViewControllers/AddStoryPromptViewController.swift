@@ -24,10 +24,6 @@ class AddStoryPromptViewController: UIViewController {
         super.viewDidLoad()
         
         numberSliderField.value = 7.5
-        storyPrompt.noun = "noun"
-        storyPrompt.adjective = "adjective"
-        storyPrompt.verb = "verb"
-        storyPrompt.number = Int(numberSliderField.value)
         storyPromptImageView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage))
         storyPromptImageView.addGestureRecognizer(gestureRecognizer)
@@ -65,7 +61,8 @@ class AddStoryPromptViewController: UIViewController {
         updateStoryPrompt()
         
         if storyPrompt.isValid() {
-            print(storyPrompt)
+            // print(storyPrompt)
+            performSegue(withIdentifier: "StoryPrompt", sender: nil)
         } else {
             showInvalidStoryPromptAlert()
         }
@@ -84,6 +81,16 @@ class AddStoryPromptViewController: UIViewController {
         }
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StoryPrompt" {
+            guard let storyPromptViewController = segue.destination as? StoryPromptViewController else {
+                return
+            }
+            
+            storyPromptViewController.storyPrompt = storyPrompt
+        }
     }
 }
 

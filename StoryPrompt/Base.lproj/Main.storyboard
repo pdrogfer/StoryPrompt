@@ -8,6 +8,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Story Prompt Table View Controller-->
+        <scene sceneID="a8M-A1-Ml2">
+            <objects>
+                <tableViewController id="QGh-wm-Vog" customClass="StoryPromptTableViewController" customModule="StoryPrompt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="OvZ-FT-6ea">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryPromptCell" textLabel="lJH-sU-icq" style="IBUITableViewCellStyleDefault" id="51S-Ob-TKP">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="51S-Ob-TKP" id="ceS-66-rkG">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJH-sU-icq">
+                                            <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QGh-wm-Vog" id="dCh-Oo-kWz"/>
+                            <outlet property="delegate" destination="QGh-wm-Vog" id="c5n-BD-WqN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="8Dk-c5-bYu"/>
+                    <connections>
+                        <segue destination="R6e-tD-kP9" kind="show" identifier="ShowStoryPrompt" id="FPw-Ev-TM6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UsI-ZA-RVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="661"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="S9Z-wk-5O1">
             <objects>
@@ -17,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RLa-08-ABn"/>
+                        <segue destination="QGh-wm-Vog" kind="relationship" relationship="rootViewController" id="acp-vh-JF6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6B-am-A68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,7 +188,7 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="R6e-tD-kP9" kind="show" id="ID5-JP-jvv"/>
+                                            <action selector="generateStoryPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHf-UE-tTh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -172,6 +213,7 @@
                         <outlet property="numberSliderField" destination="fdK-Ov-HbV" id="1bF-EI-p7P"/>
                         <outlet property="storyPromptImageView" destination="Ub3-jA-vzW" id="UdQ-HS-fSM"/>
                         <outlet property="verbTextField" destination="o56-mA-FdW" id="z8u-BF-IhS"/>
+                        <segue destination="R6e-tD-kP9" kind="show" identifier="StoryPrompt" id="3z8-5R-RUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -225,6 +267,9 @@
             <point key="canvasLocation" x="881.67938931297704" y="-35.211267605633807"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FPw-Ev-TM6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="10.circle" catalog="system" width="128" height="123"/>
         <image name="5.circle" catalog="system" width="128" height="123"/>
@@ -232,6 +277,9 @@
         <image name="object-object_box-of-books" width="1000" height="1000"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
