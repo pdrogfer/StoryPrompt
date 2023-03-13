@@ -13,7 +13,7 @@ class StoryPromptTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addDemoPrompts()
+        // addDemoPrompts()
     }
     
     func addDemoPrompts() {
@@ -67,5 +67,19 @@ class StoryPromptTableViewController: UITableViewController {
             }
             storyPromptViewController.storyPrompt = storyPrompt
         }
+    }
+    
+    @IBAction func saveStoryPrompt(unwindSegue: UIStoryboardSegue) {
+        guard let storyPromptViewController = unwindSegue.source as? StoryPromptViewController,
+              let storyPrompt = storyPromptViewController.storyPrompt else {
+            return
+        }
+        
+        storyPrompts.append(storyPrompt)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelStoryPrompt(unwindSegue: UIStoryboardSegue) {
+        
     }
 }

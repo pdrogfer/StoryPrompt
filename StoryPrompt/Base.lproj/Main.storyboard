@@ -249,16 +249,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-bK-WP8">
+                                <rect key="frame" x="101.66666666666669" y="776" width="190" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F7-J0-zgC">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="34.333333333333336"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Discard"/>
+                                        <connections>
+                                            <action selector="cancelStoryPrompt:" destination="R6e-tD-kP9" eventType="touchUpInside" id="9Yb-05-9h2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsc-lT-ODZ">
+                                        <rect key="frame" x="108" y="0.0" width="82" height="34.333333333333336"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <segue destination="iq9-i8-3H9" kind="unwind" unwindAction="saveStoryPromptWithUnwindSegue:" id="Q5o-ou-MtH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CMR-m4-buB"/>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.89411764709999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ck4-yL-nLQ" firstAttribute="centerX" secondItem="cIT-9G-kVo" secondAttribute="centerX" id="8Tl-Az-CRI"/>
                             <constraint firstItem="cIT-9G-kVo" firstAttribute="leading" secondItem="CMR-m4-buB" secondAttribute="leading" id="BNO-81-eqK"/>
                             <constraint firstItem="ck4-yL-nLQ" firstAttribute="centerY" secondItem="cIT-9G-kVo" secondAttribute="centerY" id="Q9L-7L-88S"/>
+                            <constraint firstItem="CMR-m4-buB" firstAttribute="bottom" secondItem="2y8-bK-WP8" secondAttribute="bottom" constant="7.6699999999999999" id="b1l-JK-8iV"/>
                             <constraint firstItem="cIT-9G-kVo" firstAttribute="centerY" secondItem="6U2-cn-Ewy" secondAttribute="centerY" id="hwm-0K-oic"/>
                             <constraint firstItem="cIT-9G-kVo" firstAttribute="centerX" secondItem="6U2-cn-Ewy" secondAttribute="centerX" id="iSm-SJ-HQf"/>
                             <constraint firstItem="cIT-9G-kVo" firstAttribute="width" secondItem="6U2-cn-Ewy" secondAttribute="width" id="nkz-hg-d1I"/>
+                            <constraint firstItem="2y8-bK-WP8" firstAttribute="centerX" secondItem="6U2-cn-Ewy" secondAttribute="centerX" id="rQ7-sF-J1G"/>
                             <constraint firstItem="ck4-yL-nLQ" firstAttribute="centerX" secondItem="6U2-cn-Ewy" secondAttribute="centerX" id="tdw-bA-nuk"/>
                             <constraint firstItem="ck4-yL-nLQ" firstAttribute="centerY" secondItem="6U2-cn-Ewy" secondAttribute="centerY" id="xjw-CT-pjc"/>
                         </constraints>
@@ -266,9 +291,11 @@
                     <navigationItem key="navigationItem" id="d7n-YJ-h3A"/>
                     <connections>
                         <outlet property="storyPromptTextView" destination="ck4-yL-nLQ" id="Yg1-Fn-4iS"/>
+                        <segue destination="iq9-i8-3H9" kind="unwind" identifier="CancelStoryPrompt" unwindAction="cancelStoryPromptWithUnwindSegue:" id="IU6-yo-UKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mm-NQ-uUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="iq9-i8-3H9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="881.67938931297704" y="-35.211267605633807"/>
         </scene>
